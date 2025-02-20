@@ -1,26 +1,46 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- SEO Meta Tags -->
     <title>الثلث الأخير من الليل - حاسبة وقت التهجد ومواقيت الصلاة</title>
-    <meta name="description" content="احسب بدقة الثلث الأخير من الليل ووقت التهجد بناءً على موقعك. تعرّف على أوقات الصلاة اليومية وفضل الدعاء في الثلث الأخير من الليل." />
-    <meta name="keywords" content="الثلث الأخير من الليل, قيام الليل, التهجد, أوقات الصلاة, الدعاء المستجاب, مواقيت الصلاة" />
+    <meta
+      name="description"
+      content="احسب بدقة الثلث الأخير من الليل ووقت التهجد بناءً على موقعك. تعرّف على أوقات الصلاة اليومية وفضل الدعاء في الثلث الأخير من الليل."
+    />
+    <meta
+      name="keywords"
+      content="الثلث الأخير من الليل, قيام الليل, التهجد, أوقات الصلاة, الدعاء المستجاب, مواقيت الصلاة"
+    />
     <meta name="author" content="موقع أوقات الصلاة" />
-    
+
     <!-- Open Graph / Social Media Tags -->
-    <meta property="og:title" content="الثلث الأخير من الليل - حاسبة وقت التهجد" />
-    <meta property="og:description" content="احسب بدقة الثلث الأخير من الليل ووقت التهجد بناءً على موقعك وتعرّف على أوقات الصلاة." />
+    <meta
+      property="og:title"
+      content="الثلث الأخير من الليل - حاسبة وقت التهجد"
+    />
+    <meta
+      property="og:description"
+      content="احسب بدقة الثلث الأخير من الليل ووقت التهجد بناءً على موقعك وتعرّف على أوقات الصلاة."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lastthirdofnight.netlify.app" />
-    <meta property="og:image" content="demo.png" />
-    <meta property="og:image" content="https://ibb.co/4B0X84Q" />
-    
+    <meta
+      property="og:image"
+      content="https://lastthirdofnight.netlify.app/demo.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="صورة توضيحية لوقت التهجد والثلث الأخير من الليل"
+    />
+
     <!-- Canonical URL to prevent duplicate content -->
     <link rel="canonical" href="https://lastthirdofnight.netlify.app" />
-    
+
     <!-- Preconnect and resource hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,31 +48,34 @@
       href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Favicon with multiple sizes -->
     <link rel="icon" href="praying.png" type="image/png" />
     <link rel="apple-touch-icon" sizes="180x180" href="praying-180.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="praying-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="praying-16.png" />
-    
+
     <!-- Structured Data - Schema.org markup for Rich Snippets -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "حاسبة الثلث الأخير من الليل وأوقات الصلاة",
-      "description": "تطبيق إسلامي يحسب الثلث الأخير من الليل وأوقات الصلاة بدقة حسب موقعك الجغرافي",
-      "applicationCategory": "ReligiousApplication",
-      "operatingSystem": "Web",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "حاسبة الثلث الأخير من الليل وأوقات الصلاة",
+        "description": "تطبيق إسلامي يحسب الثلث الأخير من الليل وأوقات الصلاة بدقة حسب موقعك الجغرافي",
+        "applicationCategory": "ReligiousApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
       }
-    }
     </script>
-    
+
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap");
       .almarai-light {
@@ -189,7 +212,7 @@
       .btn:hover {
         background-color: #9966cc;
       }
-      
+
       /* Responsive improvements for SEO */
       @media (max-width: 768px) {
         .container {
@@ -200,7 +223,7 @@
           font-size: 16px;
         }
       }
-      
+
       /* Additional accessibility styles */
       .skip-link {
         position: absolute;
@@ -214,7 +237,7 @@
       .skip-link:focus {
         top: 0;
       }
-      
+
       /* Footer styles */
       footer {
         text-align: center;
@@ -223,7 +246,7 @@
         border-top: 1px solid #333;
         font-size: 14px;
       }
-      
+
       /* Content sections for better SEO structure */
       .content-section {
         margin-bottom: 30px;
@@ -233,21 +256,22 @@
   <body class="almarai-regular">
     <!-- Skip link for accessibility -->
     <a href="#main-content" class="skip-link">تخطي للمحتوى الرئيسي</a>
-    
+
     <header>
       <h1>حاسبة الثلث الأخير من الليل وأوقات الصلاة</h1>
     </header>
-    
+
     <main id="main-content">
       <section class="content-section">
         <div class="container hadith-card">
           <h2 class="hadith-header">فضل الدعاء في الثلث الأخير من الليل</h2>
           <div class="hadith-text">
-            في صحيح مسلم عن أبي هريرة عن رسول الله - صلى الله عليه وسلم - قال: ينزل
-            الله - عز وجل - إلى سماء الدنيا كل ليلة حين يمضي ثلث الليل الأول، فيقول
+            في صحيح مسلم عن أبي هريرة عن رسول الله - صلى الله عليه وسلم - قال:
+            ينزل الله - عز وجل - إلى سماء الدنيا كل ليلة حين يمضي ثلث الليل
+            الأول، فيقول
             <span class="emphasis"
-              >أنا الملك أنا الملك من ذا الذي يدعوني فأستجيب له من ذا الذي يسألني
-              فأعطيه من ذا الذي يستغفرني فأغفر له</span
+              >أنا الملك أنا الملك من ذا الذي يدعوني فأستجيب له من ذا الذي
+              يسألني فأعطيه من ذا الذي يستغفرني فأغفر له</span
             >، فلا يزال كذلك حتى يضيء الفجر.
           </div>
         </div>
@@ -258,29 +282,56 @@
           <h2>أوقات الصلاة اليومية</h2>
           <div id="location" class="info-section">جاري تحديد موقعك...</div>
           <div id="prayer-times">
-            <div class="loading" aria-live="polite">جاري حساب أوقات الصلاة...</div>
+            <div class="loading" aria-live="polite">
+              جاري حساب أوقات الصلاة...
+            </div>
           </div>
           <div id="last-third" class="last-third" aria-live="polite">
             جاري حساب الثلث الأخير من الليل...
           </div>
         </div>
       </section>
-      
+
       <section class="content-section">
         <div class="container">
           <h2>أهمية الثلث الأخير من الليل</h2>
-          <p>يعتبر الثلث الأخير من الليل أفضل وقت للدعاء والعبادة، حيث ينزل الله سبحانه وتعالى إلى السماء الدنيا ويستجيب للدعاء. هذا الوقت المبارك هو فرصة عظيمة للاستغفار وطلب المغفرة.</p>
-          <p>قال النبي صلى الله عليه وسلم: "أقرب ما يكون الرب من العبد في جوف الليل الآخر، فإن استطعت أن تكون ممن يذكر الله في تلك الساعة فكن" رواه الترمذي.</p>
+          <p>
+            يعتبر الثلث الأخير من الليل أفضل وقت للدعاء والعبادة، حيث ينزل الله
+            سبحانه وتعالى إلى السماء الدنيا ويستجيب للدعاء. هذا الوقت المبارك هو
+            فرصة عظيمة للاستغفار وطلب المغفرة.
+          </p>
+          <p>
+            قال النبي صلى الله عليه وسلم: "أقرب ما يكون الرب من العبد في جوف
+            الليل الآخر، فإن استطعت أن تكون ممن يذكر الله في تلك الساعة فكن"
+            رواه الترمذي.
+          </p>
         </div>
       </section>
     </main>
-    
+
     <footer>
       <p>© 2025 حاسبة الثلث الأخير من الليل | جميع الحقوق محفوظة</p>
       <p>
-        <a href="https://abdelrahman-nassar.netlify.app/"target="_blank" style="color: #bb86fc;">سياسة الخصوصية</a> | 
-        <a href="https://abdelrahman-nassar.netlify.app/"target="_blank" style="color: #bb86fc;">الشروط والأحكام</a> | 
-        <a href="https://abdelrahman-nassar.netlify.app/"target="_blank" style="color: #bb86fc;">اتصل بنا</a>
+        <a
+          href="https://abdelrahman-nassar.netlify.app/"
+          target="_blank"
+          style="color: #bb86fc"
+          >سياسة الخصوصية</a
+        >
+        |
+        <a
+          href="https://abdelrahman-nassar.netlify.app/"
+          target="_blank"
+          style="color: #bb86fc"
+          >الشروط والأحكام</a
+        >
+        |
+        <a
+          href="https://abdelrahman-nassar.netlify.app/"
+          target="_blank"
+          style="color: #bb86fc"
+          >اتصل بنا</a
+        >
       </p>
     </footer>
 
@@ -600,36 +651,38 @@
       // Initialize the app when the page loads
       window.onload = initApp;
     </script>
-    
+
     <!-- Deferred JavaScript loading for better performance -->
     <script>
       // Lazy load images function
-      document.addEventListener("DOMContentLoaded", function() {
-        const lazyImages = document.querySelectorAll('img[data-src]');
-        if ('IntersectionObserver' in window) {
-          let imageObserver = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(function(entry) {
+      document.addEventListener("DOMContentLoaded", function () {
+        const lazyImages = document.querySelectorAll("img[data-src]");
+        if ("IntersectionObserver" in window) {
+          let imageObserver = new IntersectionObserver(function (
+            entries,
+            observer
+          ) {
+            entries.forEach(function (entry) {
               if (entry.isIntersecting) {
                 let image = entry.target;
                 image.src = image.dataset.src;
-                image.removeAttribute('data-src');
+                image.removeAttribute("data-src");
                 imageObserver.unobserve(image);
               }
             });
           });
-          
-          lazyImages.forEach(function(image) {
+
+          lazyImages.forEach(function (image) {
             imageObserver.observe(image);
           });
         } else {
           // Fallback for browsers that don't support IntersectionObserver
-          lazyImages.forEach(function(image) {
+          lazyImages.forEach(function (image) {
             image.src = image.dataset.src;
-            image.removeAttribute('data-src');
+            image.removeAttribute("data-src");
           });
         }
       });
     </script>
   </body>
 </html>
-</antAr

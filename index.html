@@ -3,40 +3,632 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>الثلث الأخير من الليل</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>الثلث الأخير من الليل - حاسبة وقت التهجد ومواقيت الصلاة</title>
+    <meta name="description" content="احسب بدقة الثلث الأخير من الليل ووقت التهجد بناءً على موقعك. تعرّف على أوقات الصلاة اليومية وفضل الدعاء في الثلث الأخير من الليل." />
+    <meta name="keywords" content="الثلث الأخير من الليل, قيام الليل, التهجد, أوقات الصلاة, الدعاء المستجاب, مواقيت الصلاة" />
+    <meta name="author" content="موقع أوقات الصلاة" />
+    
+    <!-- Open Graph / Social Media Tags -->
+    <meta property="og:title" content="الثلث الأخير من الليل - حاسبة وقت التهجد" />
+    <meta property="og:description" content="احسب بدقة الثلث الأخير من الليل ووقت التهجد بناءً على موقعك وتعرّف على أوقات الصلاة." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.الثلثالأخيرمنالليل.com" />
+    <meta property="og:image" content="night-prayer.jpg" />
+    
+    <!-- Canonical URL to prevent duplicate content -->
+    <link rel="canonical" href="https://www.الثلثالأخيرمنالليل.com" />
+    
+    <!-- Preconnect and resource hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+    
+    <!-- Favicon with multiple sizes -->
     <link rel="icon" href="praying.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="praying-180.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="praying-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="praying-16.png" />
+    
+    <!-- Structured Data - Schema.org markup for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "حاسبة الثلث الأخير من الليل وأوقات الصلاة",
+      "description": "تطبيق إسلامي يحسب الثلث الأخير من الليل وأوقات الصلاة بدقة حسب موقعك الجغرافي",
+      "applicationCategory": "ReligiousApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap");
+      .almarai-light {
+        font-family: "Almarai", serif;
+        font-weight: 300;
+        font-style: normal;
+      }
+
+      .almarai-regular {
+        font-family: "Almarai", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .almarai-bold {
+        font-family: "Almarai", serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      .almarai-extrabold {
+        font-family: "Almarai", serif;
+        font-weight: 800;
+        font-style: normal;
+      }
+
+      body {
+        background-color: #121212;
+        color: #e0e0e0;
+        margin: 0;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto 20px auto;
+        background-color: #1e1e1e;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
+      h1,
+      h2 {
+        color: #bb86fc;
+        text-align: center;
+      }
+      .prayer-time {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        border-bottom: 1px solid #333;
+      }
+      .prayer-name {
+        font-weight: bold;
+      }
+      .last-third {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #2d2d2d;
+        border-radius: 5px;
+        text-align: center;
+        border-right: 4px solid #03dac6;
+      }
+      .highlight {
+        color: #cf6679;
+        font-weight: bold;
+      }
+      .loading {
+        text-align: center;
+        font-style: italic;
+        color: #bb86fc;
+        margin: 20px 0;
+      }
+      .error {
+        color: #cf6679;
+        text-align: center;
+        padding: 10px;
+        background-color: rgba(207, 102, 121, 0.1);
+        border-radius: 5px;
+      }
+      .info-section {
+        margin-top: 15px;
+        background-color: #2d2d2d;
+        padding: 15px;
+        border-radius: 5px;
+      }
+      .hadith-card {
+        font-family: "Amiri", serif;
+        padding: 25px;
+        background-color: #1e1e1e;
+        background-image: linear-gradient(to bottom, #2d2d2d, #1e1e1e);
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+        margin-bottom: 25px;
+        border-right: 6px solid #03dac6;
+        border-left: 1px solid #333;
+        border-top: 1px solid #333;
+        border-bottom: 1px solid #333;
+      }
+      .hadith-header {
+        text-align: center;
+        color: #bb86fc;
+        font-size: 24px;
+        margin-bottom: 15px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        border-bottom: 1px solid #444;
+        padding-bottom: 10px;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+      .hadith-text {
+        line-height: 1.8;
+        font-size: 19px;
+        text-align: justify;
+        padding: 10px;
+        color: #e0e0e0;
+      }
+      .emphasis {
+        color: #03dac6;
+        font-weight: bold;
+      }
+      .btn {
+        background-color: #bb86fc;
+        color: #000;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: "Amiri", serif;
+        font-weight: bold;
+        margin-top: 10px;
+        transition: background-color 0.3s;
+      }
+      .btn:hover {
+        background-color: #9966cc;
+      }
+      
+      /* Responsive improvements for SEO */
+      @media (max-width: 768px) {
+        .container {
+          padding: 15px;
+          margin-bottom: 15px;
+        }
+        .hadith-text {
+          font-size: 16px;
+        }
+      }
+      
+      /* Additional accessibility styles */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #bb86fc;
+        color: #000;
+        padding: 8px;
+        z-index: 100;
+      }
+      .skip-link:focus {
+        top: 0;
+      }
+      
+      /* Footer styles */
+      footer {
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 30px;
+        border-top: 1px solid #333;
+        font-size: 14px;
+      }
+      
+      /* Content sections for better SEO structure */
+      .content-section {
+        margin-bottom: 30px;
+      }
+    </style>
   </head>
   <body class="almarai-regular">
-    <div class="container hadith-card">
-      <div class="hadith-header">الثلث الأخير من الليل</div>
-      <div class="hadith-text">
-        في صحيح مسلم عن أبي هريرة عن رسول الله - صلى الله عليه وسلم - قال: ينزل
-        الله - عز وجل - إلى سماء الدنيا كل ليلة حين يمضي ثلث الليل الأول، فيقول
-        <span class="emphasis"
-          >أنا الملك أنا الملك من ذا الذي يدعوني فأستجيب له من ذا الذي يسألني
-          فأعطيه من ذا الذي يستغفرني فأغفر له</span
-        >، فلا يزال كذلك حتى يضيء الفجر.
-      </div>
-    </div>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">تخطي للمحتوى الرئيسي</a>
+    
+    <header>
+      <h1>حاسبة الثلث الأخير من الليل وأوقات الصلاة</h1>
+    </header>
+    
+    <main id="main-content">
+      <section class="content-section">
+        <div class="container hadith-card">
+          <h2 class="hadith-header">فضل الدعاء في الثلث الأخير من الليل</h2>
+          <div class="hadith-text">
+            في صحيح مسلم عن أبي هريرة عن رسول الله - صلى الله عليه وسلم - قال: ينزل
+            الله - عز وجل - إلى سماء الدنيا كل ليلة حين يمضي ثلث الليل الأول، فيقول
+            <span class="emphasis"
+              >أنا الملك أنا الملك من ذا الذي يدعوني فأستجيب له من ذا الذي يسألني
+              فأعطيه من ذا الذي يستغفرني فأغفر له</span
+            >، فلا يزال كذلك حتى يضيء الفجر.
+          </div>
+        </div>
+      </section>
 
-    <div class="container">
-      <h1>أوقات الصلاة</h1>
-      <div id="location" class="info-section">جاري تحديد موقعك...</div>
-      <div id="prayer-times">
-        <div class="loading">جاري حساب أوقات الصلاة...</div>
-      </div>
-      <div id="last-third" class="last-third">
-        جاري حساب الثلث الأخير من الليل...
-      </div>
-    </div>
+      <section class="content-section" aria-label="أوقات الصلاة">
+        <div class="container">
+          <h2>أوقات الصلاة اليومية</h2>
+          <div id="location" class="info-section">جاري تحديد موقعك...</div>
+          <div id="prayer-times">
+            <div class="loading" aria-live="polite">جاري حساب أوقات الصلاة...</div>
+          </div>
+          <div id="last-third" class="last-third" aria-live="polite">
+            جاري حساب الثلث الأخير من الليل...
+          </div>
+        </div>
+      </section>
+      
+      <section class="content-section">
+        <div class="container">
+          <h2>أهمية الثلث الأخير من الليل</h2>
+          <p>يعتبر الثلث الأخير من الليل أفضل وقت للدعاء والعبادة، حيث ينزل الله سبحانه وتعالى إلى السماء الدنيا ويستجيب للدعاء. هذا الوقت المبارك هو فرصة عظيمة للاستغفار وطلب المغفرة.</p>
+          <p>قال النبي صلى الله عليه وسلم: "أقرب ما يكون الرب من العبد في جوف الليل الآخر، فإن استطعت أن تكون ممن يذكر الله في تلك الساعة فكن" رواه الترمذي.</p>
+        </div>
+      </section>
+    </main>
+    
+    <footer>
+      <p>© 2025 حاسبة الثلث الأخير من الليل | جميع الحقوق محفوظة</p>
+      <p>
+        <a href="https://abdelrahman-nassar.netlify.app/"target="_blank" style="color: #bb86fc;">سياسة الخصوصية</a> | 
+        <a href="https://abdelrahman-nassar.netlify.app/"target="_blank" style="color: #bb86fc;">الشروط والأحكام</a> | 
+        <a href="https://abdelrahman-nassar.netlify.app/"target="_blank" style="color: #bb86fc;">اتصل بنا</a>
+      </p>
+    </footer>
 
-    <script src="script.js"></script>
+    <script>
+      // Key for storing location in localStorage
+      const LOCATION_STORAGE_KEY = "prayerTimesLocation";
+
+      // Main function to initialize the app
+      function initApp() {
+        document.getElementById("prayer-times").innerHTML =
+          '<div class="loading" aria-live="polite">جاري حساب أوقات الصلاة...</div>';
+        document.getElementById("last-third").innerHTML =
+          "جاري حساب الثلث الأخير من الليل...";
+
+        // Check if we have saved location
+        const savedLocation = localStorage.getItem(LOCATION_STORAGE_KEY);
+
+        if (savedLocation) {
+          // Use saved location
+          const locationData = JSON.parse(savedLocation);
+          if (locationData.lat && locationData.lng) {
+            console.log("Using saved location");
+            useLocation(
+              locationData.lat,
+              locationData.lng,
+              locationData.country,
+              locationData.city
+            );
+            return;
+          }
+        }
+
+        // Get user's current location if not saved
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            handleLocation,
+            handleLocationError
+          );
+        } else {
+          showError("متصفحك لا يدعم خدمة تحديد الموقع.");
+        }
+      }
+
+      // Handle successful location retrieval
+      function handleLocation(position) {
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+
+        // Get country name from coordinates using reverse geocoding
+        getCountryName(lat, lng);
+      }
+
+      // Get country name using reverse geocoding
+      function getCountryName(lat, lng) {
+        fetch(
+          `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=10&accept-language=ar`
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            let country = data.address.country || "غير معروف";
+            let city =
+              data.address.city ||
+              data.address.town ||
+              data.address.village ||
+              data.address.state ||
+              "";
+
+            // Save location to localStorage
+            const locationData = {
+              lat: lat,
+              lng: lng,
+              country: country,
+              city: city,
+              timestamp: new Date().getTime(),
+            };
+            localStorage.setItem(
+              LOCATION_STORAGE_KEY,
+              JSON.stringify(locationData)
+            );
+
+            // Use the location
+            useLocation(lat, lng, country, city);
+          })
+          .catch((error) => {
+            console.error("Error getting location name:", error);
+            useLocation(lat, lng, "تم تحديد الموقع", "");
+          });
+      }
+
+      // Use location data to get prayer times
+      function useLocation(lat, lng, country, city) {
+        // Display location
+        document.getElementById("location").innerHTML = `
+          <strong>موقعك:</strong> ${city ? city + "، " : ""}${country}<br>
+          <strong>التوقيت المحلي:</strong> ${new Date().toLocaleString("ar-SA")}
+          <div style="text-align: center; margin-top: 10px;">
+              <button class="btn" onclick="resetLocation()">تحديث الموقع</button>
+          </div>
+      `;
+
+        // Get timezone and prayer times
+        getPrayerTimes(lat, lng);
+      }
+
+      // Reset saved location
+      function resetLocation() {
+        localStorage.removeItem(LOCATION_STORAGE_KEY);
+        document.getElementById("location").innerHTML = "جاري تحديد موقعك...";
+        document.getElementById("prayer-times").innerHTML =
+          '<div class="loading" aria-live="polite">جاري حساب أوقات الصلاة...</div>';
+        document.getElementById("last-third").innerHTML =
+          "جاري حساب الثلث الأخير من الليل...";
+
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            handleLocation,
+            handleLocationError
+          );
+        } else {
+          showError("متصفحك لا يدعم خدمة تحديد الموقع.");
+        }
+      }
+
+      // Handle geolocation errors
+      function handleLocationError(error) {
+        let errorMessage = "خطأ غير معروف";
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            errorMessage = "تم رفض طلب تحديد الموقع... قم بتفعيل GPS";
+            break;
+          case error.POSITION_UNAVAILABLE:
+            errorMessage = "معلومات الموقع غير متوفرة.";
+            break;
+          case error.TIMEOUT:
+            errorMessage = "انتهت مهلة طلب تحديد الموقع.";
+            break;
+        }
+        showError(errorMessage);
+      }
+
+      // Get prayer times using coordinates and timezone
+      function getPrayerTimes(lat, lng) {
+        // Use Aladhan API for prayer times
+        const date = new Date();
+        const month = date.getMonth() + 1;
+        const year = date.getFullYear();
+
+        fetch(
+          `https://api.aladhan.com/v1/calendar/${year}/${month}?latitude=${lat}&longitude=${lng}&method=2`
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            const today = date.getDate();
+            const prayerData = data.data[today - 1].timings;
+
+            // Display prayer times
+            displayPrayerTimes(prayerData);
+
+            // Calculate last third of night
+            calculateLastThirdOfNight(prayerData);
+          })
+          .catch((error) => {
+            showError("خطأ في جلب أوقات الصلاة: " + error.message);
+          });
+      }
+
+      // Display prayer times in the UI
+      function displayPrayerTimes(prayerData) {
+        const prayerTimesDiv = document.getElementById("prayer-times");
+
+        // Format content for display
+        let content = "<h2>أوقات الصلاة اليوم</h2>";
+
+        // Main five prayers with Arabic names
+        const prayers = [
+          { name: "الفجر", key: "Fajr" },
+          { name: "الظهر", key: "Dhuhr" },
+          { name: "العصر", key: "Asr" },
+          { name: "المغرب", key: "Maghrib" },
+          { name: "العشاء", key: "Isha" },
+        ];
+
+        prayers.forEach((prayer) => {
+          // Extract the time part without the timezone
+          const timeString = prayerData[prayer.key].replace(" (EET)", "");
+          // Convert to Date object then format to 12-hour
+          const timeDate = convertPrayerTimeToDate(timeString);
+          const formattedTime = formatTime(timeDate);
+
+          content += `
+<div class="prayer-time">
+<span class="prayer-name">${prayer.name}</span>
+<span>${formattedTime}</span>
+</div>
+`;
+        });
+
+        prayerTimesDiv.innerHTML = content;
+      }
+
+      // Calculate the last third of night
+      function calculateLastThirdOfNight(prayerData) {
+        const lastThirdDiv = document.getElementById("last-third");
+
+        // Extract Maghrib and Fajr times
+        const maghribTime = convertPrayerTimeToDate(prayerData.Maghrib);
+        let fajrTime = convertPrayerTimeToDate(prayerData.Fajr);
+
+        // If Fajr is before Maghrib, it means it's for the next day
+        if (fajrTime < maghribTime) {
+          fajrTime.setDate(fajrTime.getDate() + 1);
+        }
+
+        // Calculate the night duration in milliseconds
+        const nightDuration = fajrTime - maghribTime;
+
+        // Calculate the start of the last third
+        const lastThirdStart = new Date(
+          maghribTime.getTime() + (nightDuration * 2) / 3
+        );
+
+        // Get current time
+        const now = new Date();
+
+        // Calculate time until last third starts (if it hasn't started yet)
+        let content = "";
+        if (now < lastThirdStart) {
+          // Last third hasn't started yet
+          const timeUntilLastThird = formatTimeDifference(lastThirdStart - now);
+          content = `
+              <h2>الثلث الأخير من الليل</h2>
+              <p>يبدأ الثلث الأخير من الليل في <span class="highlight">${formatTime(
+                lastThirdStart
+              )}</span></p>
+              <p>الوقت المتبقي حتى بداية الثلث الأخير: <span class="highlight">${timeUntilLastThird}</span></p>
+          `;
+        } else if (now < fajrTime) {
+          // Currently in the last third of night
+          const remainingTime = formatTimeDifference(fajrTime - now);
+          content = `
+              <h2>الثلث الأخير من الليل</h2>
+              <p class="highlight">أنت الآن في وقت الثلث الأخير من الليل!</p>
+              <p>بدأ الثلث الأخير في <span class="highlight">${formatTime(
+                lastThirdStart
+              )}</span></p>
+              <p>الوقت المتبقي في الثلث الأخير: <span class="highlight">${remainingTime}</span></p>
+          `;
+        } else {
+          // Past Fajr, calculate for the next night
+          content = `
+              <h2>الثلث الأخير من الليل</h2>
+              <p>لقد مر وقت صلاة الفجر لهذا اليوم.</p>
+              <p>سيبدأ الثلث الأخير من الليل في <span class="highlight">${formatTime(
+                lastThirdStart
+              )}</span> الليلة.</p>
+          `;
+        }
+
+        // Add interval information
+        const intervalStart = formatTime(lastThirdStart);
+        const intervalEnd = formatTime(fajrTime);
+        content += `
+          <div class="info-section">
+              <p>فترة الثلث الأخير من الليل: <br>
+              <span class="highlight">${intervalStart} - ${intervalEnd}</span></p>
+          </div>
+      `;
+
+        lastThirdDiv.innerHTML = content;
+      }
+
+      // Helper function to convert prayer time string to Date object
+      function convertPrayerTimeToDate(timeString) {
+        // Remove timezone indicator if present
+        timeString = timeString.replace(/ \(.+\)$/, "");
+
+        const today = new Date();
+        const [hours, minutes] = timeString.split(":");
+
+        const date = new Date();
+        date.setHours(parseInt(hours, 10));
+        date.setMinutes(parseInt(minutes, 10));
+        date.setSeconds(0);
+
+        return date;
+      }
+
+      // Format time for display
+      function formatTime(date) {
+        return date.toLocaleTimeString("ar-SA", {
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: true,
+        });
+      }
+
+      // Format time difference in hours and minutes
+      function formatTimeDifference(milliseconds) {
+        const hours = Math.floor(milliseconds / (1000 * 60 * 60));
+        const minutes = Math.floor(
+          (milliseconds % (1000 * 60 * 60)) / (1000 * 60)
+        );
+
+        return `${hours} ساعة و ${minutes} دقيقة`;
+      }
+
+      // Show error message
+      function showError(message) {
+        document.getElementById(
+          "prayer-times"
+        ).innerHTML = `<div class="error" role="alert">${message}</div>`;
+        document.getElementById(
+          "last-third"
+        ).innerHTML = `<div class="error" role="alert">تعذر الحساب</div>`;
+      }
+
+      // Initialize the app when the page loads
+      window.onload = initApp;
+    </script>
+    
+    <!-- Deferred JavaScript loading for better performance -->
+    <script>
+      // Lazy load images function
+      document.addEventListener("DOMContentLoaded", function() {
+        const lazyImages = document.querySelectorAll('img[data-src]');
+        if ('IntersectionObserver' in window) {
+          let imageObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) {
+                let image = entry.target;
+                image.src = image.dataset.src;
+                image.removeAttribute('data-src');
+                imageObserver.unobserve(image);
+              }
+            });
+          });
+          
+          lazyImages.forEach(function(image) {
+            imageObserver.observe(image);
+          });
+        } else {
+          // Fallback for browsers that don't support IntersectionObserver
+          lazyImages.forEach(function(image) {
+            image.src = image.dataset.src;
+            image.removeAttribute('data-src');
+          });
+        }
+      });
+    </script>
   </body>
 </html>
+</antAr

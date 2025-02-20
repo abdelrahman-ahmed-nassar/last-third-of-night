@@ -124,7 +124,7 @@ function handleLocationError(error) {
   let errorMessage = "خطأ غير معروف";
   switch (error.code) {
     case error.PERMISSION_DENIED:
-      errorMessage = "تم رفض طلب تحديد الموقع.";
+      errorMessage = "تم رفض طلب تحديد الموقع... قم بتفعيل GPS";
       break;
     case error.POSITION_UNAVAILABLE:
       errorMessage = "معلومات الموقع غير متوفرة.";
